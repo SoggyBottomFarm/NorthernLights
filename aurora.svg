@@ -10358,18 +10358,18 @@ jt6UYyPQY/KgnOPf/wCuKaJC7c/nQUOKEnGOvb0ppj6/rQh38/7v605PnH49qAGsuF/kfSoyOOOT
 	<text
        xml:space="preserve"
        style="font-size:80px;line-height:1.25;font-family:Arial;stroke-width:0.508931"
-       x="5"
+       x="120"
        y="10">
 		<tspan style="fill:url(#linearGradient2);fill-opacity:1;stroke-width:0.508931"
 		filter="url(#f2)"
-         x="5"
-         y="70">Northern Lights
+         x="140"
+         y="160">Northern Lights
 		</tspan>
 		
 		<tspan style="fill:url(#linearGradient2);fill-opacity:1;stroke-width:0.508931"
 		filter="url(#f2)"
-         x="5"
-         y="160">Therapy Service</tspan>
+         x="140"
+         y="240">Therapy Service</tspan>
 	</text>
 	
 </svg>
