@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg" id='svg' width='100%' height='100%' style="background-color:black"  onload="init(evt)">
+   <script>//<![CDATA[
+   
+		
+		var p1;
+		var np=25;
+		
+		var pathMove='M';
+		
+		var pathQuadBez=' Q';
+		
+		var pathComma=',';
+		
+		var pSp=' ';
+		
+		var pDZ='0,0';
+		
+		var pD=[];
+		
+		function init(evt){
+			p1=document.getElementById("path");
+			document.addEventListener('mousemove',function(){aP(event)} );
+			document.addEventListener('touchmove',function(){ event.preventDefault(); aP(event.targetTouches[0])});
+
+		}
+
+
+		function aP(e){ 
+			pD.push([e.pageX,e.pageY]);
+			if(pD.length>np){
+				rP()
+			};
+			pU();
+		};
+
+
+		function mP(p2,p1,f){
+			return [p1[0]+(p2[0]-p1[0])*f , p1[1]+(p2[1]-p1[1])*f]
+		};
+
+		function rP(){ 
+			if(pD.length>1){ 
+				pD.shift(); 
+				pU(); 
+			} 
+		};
+
+		function pU(){
+			var nP=pD.length>1?pathMove:pathMove+pDZ;
+
+			for( var L=pD.length-1,j=0; j<L; j++ ){
+				if( j!=0 ){
+					var P2=mP(pD[j],pD[j+1],.5);
+					nP+=pathQuadBez+pD[j][0]+pathComma+pD[j][1]+pSp+P2[0]+pathComma+P2[1];
+				}else{ 
+					nP+=pSp+pD[j][0]+pathComma+pD[j][1] 
+				}
+			}
+			p1.setAttribute("d",nP);
+		}
+
+    //]]>
+    </script>
+	<defs>
+		
+		<filter id="glow" x="-50%" y="-50%" height="500%" width="500%">
+			<feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+		</filter>
+		
+		<linearGradient id="linearGradient" gradientTransform="rotate(90)" >
+			<stop stop-color="MidnightBlue" stop-opacity="0.8" offset="0%">
+				<animate attributeName="stop-color" dur="4s" from="MidnightBlue" to="DeepPink" repeatCount="indefinite" />				
+			</stop>
+			
+			<stop stop-color="blue" stop-opacity="0.8" offset="30%">
+				<animate attributeName="stop-color" dur="10s" from="blue" to="purple" repeatCount="indefinite" />
+			</stop>
+
+			<stop stop-color="lime" stop-opacity="0.8" offset="60%">
+				<animate attributeName="stop-color" dur="6s" from="lime" to="MidnightBlue" repeatCount="indefinite" />
+			</stop>
+			
+			<stop stop-color="MidnightBlue" stop-opacity="0.8" offset="100%">
+				<animate attributeName="stop-color" dur="8s" from="MidnightBlue" to="DarkGreen" repeatCount="indefinite" />
+			</stop>
+		</linearGradient>
+		
+	</defs>
+	<path  id='path'  fill='none' stroke='url(#linearGradient)' stroke-width='30' filter="url(#glow)" ></path>
+</svg>
+
+
