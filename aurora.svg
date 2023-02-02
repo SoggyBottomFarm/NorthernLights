@@ -10358,7 +10358,7 @@ jt6UYyPQY/KgnOPf/wCuKaJC7c/nQUOKEnGOvb0ppj6/rQh38/7v605PnH49qAGsuF/kfSoyOOOT
 				c280,140 720,40 1045,100" 
 				begin="anim1.end" fill="freeze"/>
 		</path>
-
+<!--
 		<g
 		 id="ufo"
 		 transform="translate(-61.974027,-126.39808)" visibility="hidden">
@@ -10392,17 +10392,16 @@ jt6UYyPQY/KgnOPf/wCuKaJC7c/nQUOKEnGOvb0ppj6/rQh38/7v605PnH49qAGsuF/kfSoyOOOT
 		<animate id="stReg0001" attributeName="visibility" attributeType="XML" to="visible" dur="4s" begin="8s;ufoFly.end+8"/>
 	  </g>
 
-
-		<path id="ufoPath" 
-			stroke="none"
-			fill="none"
-			stroke-width="2"
-			stroke-opacity="0.5" 
-			d="M-45,45 c280,140 720,40 1045,100"/>
-		<animateMotion id="ufoFly" xlink:href="#ufo" dur="4s" begin="8s;ufoFly.end+8" fill="freeze" repeatCount="1">
-			<mpath xlink:href="#ufoPath" />
-		</animateMotion>
-
+	<path id="ufoPath" 
+		stroke="none"
+		fill="none"
+		stroke-width="2"
+		stroke-opacity="0.5" 
+		d="M-45,45 c280,140 720,40 1045,100"/>
+	<animateMotion id="ufoFly" xlink:href="#ufo" dur="4s" begin="8s;ufoFly.end+8" fill="freeze" repeatCount="1">
+		<mpath xlink:href="#ufoPath" />
+	</animateMotion>
+-->
 
 	</g>
 <!--	
